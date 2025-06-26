@@ -18,7 +18,8 @@ module.exports = {
           100: '#221f3d',
           200: '#0f0d23'
         },
-        accent: '#36d399'
+        accent: '#36d399',
+        muted: '#99a1af',
       }
     },
   },
