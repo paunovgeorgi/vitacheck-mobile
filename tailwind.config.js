@@ -20,7 +20,8 @@ module.exports = {
         },
         accent: '#36d399',
         muted: '#99a1af',
-        peach: '#FFB433',
+        peach: '#FFA94D',
+        night: '#4D8CDB'
       }
     },
   },
