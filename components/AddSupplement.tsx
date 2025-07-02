@@ -1,4 +1,4 @@
-import { commonSupplements } from '@/constants/supplements'; // adjust path as needed
+import { commonSupplements } from '@/constants/supplements';
 import { useFilteredSuggestions } from '@/hooks/useFilteredSuggestions';
 import { useSupplements } from '@/hooks/useSupplements';
 import { categorizeSupplement } from '@/services/supplementsAPI';
@@ -21,8 +21,7 @@ const RELATION_OPTIONS = [
 ];
 
 const AddSupplement = () => {
-//   const { addSupplement, setOpenPeriod } = useSupplements();
-  const { addSupplement, clearSupplements } = useSupplements();
+  const { addSupplement} = useSupplements();
 
   const [name, setName] = useState('');
   const [dosage, setDosage] = useState('');
@@ -58,7 +57,7 @@ const AddSupplement = () => {
       const data = await categorizeSupplement(name);
       setReasoning(data.reasoning || '');
       setRelation(data.suggestedMealCategory || RELATION_OPTIONS[0].value);
-      setTime(data.suggestedTimeCategory || TIME_OPTIONS[0].value);
+      setTime(data.suggestedTimeCategory || TIME_OPTIONS[0].value); 
 
     } catch (err) {
       setError('Unable to provide AI reasoning at the moment. Please try again later.');
@@ -101,7 +100,6 @@ const AddSupplement = () => {
       position: 'top',
     });
   } catch (error) {
-    // setError('Could not add supplement. Please try again MATE.');
     Toast.show({
       type: 'error',
       text1: 'Error',
@@ -111,10 +109,6 @@ const AddSupplement = () => {
   }
   setIsAdding(false);
 };
-
-const handleClearAll = async () => {
-  await clearSupplements();
-}
 
   const handleOnNameChange = (text: string) => {
     setName(text);
@@ -303,11 +297,6 @@ const handleClearAll = async () => {
       >
         {isAdding ? <ActivityIndicator color="#fff" /> : <Text style={styles.addButtonText}>Add Supplement</Text>}
       </TouchableOpacity>
-      {/* <TouchableOpacity
-      style={styles.addButton}
-      onPress={handleClearAll}>
-        <Text style={styles.addButtonText}>Clear All Supplements</Text>
-      </TouchableOpacity> */}
     </View>
   );
 };

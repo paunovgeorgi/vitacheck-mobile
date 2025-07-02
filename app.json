@@ -9,14 +9,25 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["background-processing", "background-fetch"]
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/vitalogo-final.png",
+        "foregroundImage": "./assets/images/vitalogo-icon.png",
         "backgroundColor": "#030712"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.georgiam.vitacheck",
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "WAKE_LOCK",
+        "VIBRATE"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -32,11 +43,25 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#030712"
+        }      
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/vitalogo-final.png",
+          "color": "#36d399",
+          "defaultChannel": "default"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1b8dba3f-cbd1-4cdb-b954-fb182bc78fee"
+      }
     }
   }
 }

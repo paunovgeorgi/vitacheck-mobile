@@ -9,7 +9,6 @@ type Props = { item: Supplement, takenMap: any, toggleTaken: any };
 const SupplementPeriodBoxItem = ({ item, takenMap, toggleTaken }: Props) => {
 
   const { supplements } = useSupplements();
-  // const { takenMap, toggleTaken } = useDailyIntake();
   const [modalVisible, setModalVisible] = useState(false);
   const { removeSupplement } = useSupplements();
 

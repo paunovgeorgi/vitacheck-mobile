@@ -21,7 +21,6 @@ const SupplementPeriodBox = ({periodBefore, periodWith, periodAfter, takenMap, t
     const withNotTaken = periodWith.some(supp => notTakenIds.includes(supp.id));
     const afterNotTaken = periodAfter.some(supp => notTakenIds.includes(supp.id));
 
-    console.log(periodBefore);
     const periodColor = period === 'Noon' ? 'bg-peach/20' : 'bg-night/20';
     const selectedClass = period ? `text-white p-2 ${periodColor} rounded-md border border-accent/20 min-w-[106px]` :'text-white p-2 bg-accent/20 rounded-md border border-accent/20 min-w-[106px]';
 
@@ -40,7 +39,7 @@ const SupplementPeriodBox = ({periodBefore, periodWith, periodAfter, takenMap, t
                     </View>
 
                         <View className='flex h-full'>
-                      {/* {showRelation === FoodRelation.BEFORE && periodBefore && periodBefore.length > 0 && (
+                      {showRelation === FoodRelation.BEFORE && periodBefore && periodBefore.length > 0 && (
                               <FlatList
                                 horizontal={false}
                                 showsHorizontalScrollIndicator={false}
@@ -54,7 +53,7 @@ const SupplementPeriodBox = ({periodBefore, periodWith, periodAfter, takenMap, t
                                   </TouchableOpacity>
                                 )}
                               />
-                            )} */}
+                            )}
                         
                       {showRelation === FoodRelation.WITH && periodWith && periodWith.length > 0 && (
                               <FlatList
